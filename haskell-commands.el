@@ -114,7 +114,7 @@ You can create new session using function `haskell-session-make'."
                                                             '(":set +c"))) ; :type-at in GHC 8+
                                                   "\n"))
           (haskell-process-send-string process ":set prompt \"\\4\"")
-          (haskell-process-send-string process (format ":set prompt2 \"%s\""
+          (haskell-process-send-string process (format ":set prompt-cont \"%s\""
                                                        haskell-interactive-prompt2)))
 
     :live (lambda (process buffer)
