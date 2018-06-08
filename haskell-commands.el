@@ -41,7 +41,7 @@
 (defcustom haskell-mode-stylish-haskell-path "stylish-haskell"
   "Path to `stylish-haskell' executable."
   :group 'haskell
-  :type 'string)
+  :type 'sexp)
 
 (defcustom haskell-interactive-set-+c
   t
@@ -806,7 +806,7 @@ stylish-haskell executable. This function tries to preserve
 cursor position and markers by using
 `haskell-mode-buffer-apply-command'."
   (interactive)
-  (haskell-mode-buffer-apply-command haskell-mode-stylish-haskell-path))
+  (haskell-mode-buffer-apply-command (eval haskell-mode-stylish-haskell-path)))
 
 (defun haskell-mode-buffer-apply-command (cmd)
   "Execute shell command CMD with current buffer as input and output.
